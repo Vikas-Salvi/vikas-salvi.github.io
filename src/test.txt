@@ -1,0 +1,170 @@
+import Greet from './components/Greet';
+import Welcome from './components/Welcome';
+import Message from './components/Message';
+import Timer from './components/Timer';
+import Counter from './components/Counter';
+import FunctionClick from './components/FunctionClick';
+import ClassClick from './components/ClassClick';
+import ParentComponent from './components/ParentComponent';
+import UserGreeting from './components/UserGreeting';
+import NameList from './components/NameList';
+import Form from './components/Form';
+import LifeCycleA from './components/LifeCycleA';
+import FragmentDemo from './components/FragmentDemo';
+import Table from './components/Table';
+import PureComp from './components/PureComp';
+import ParentComp from './components/ParentComp';
+import RefsDemo from './components/RefsDemo';
+import FocusInput from './components/FocusInput';
+import FRParentInput from './components/FRParentInput';
+import PortalDemo from './components/PortalDemo';
+import Hero from './components/Hero';
+import ErrorBoundary from './components/ErrorBoundary';
+import ClickCounter from './components/ClickCounter';
+import HoverCounter from './components/HoverCounter';
+import ClickCounterTwo from './components/ClickCounterTwo';
+import HoverCounterTwo from './components/HoverCounterTwo';
+import RenderPropsUser from './components/RenderPropsUser';
+import RenderPropsCounter from './components/RenderPropsCounter';
+//import ComponentC from './components/ComponentC';
+import { UserProvider } from './components/userContext';
+import HookCounter from './hooks/UseState/HookCounter';
+import HookCounterTwo from './hooks/UseState/HookCounterTwo';
+import HookCounterThree from './hooks/UseState/HookCounterThree';
+import ClassCounterOne from './hooks/UseEffect/ClassCounterOne';
+import HookMouse from './hooks/UseEffect/HookMouse';
+import MouseContainer from './hooks/UseEffect/MouseContainer';
+import IntervalClassCounter from './hooks/UseEffect/IntervalClassCounter';
+import IntervalHookCounter from './hooks/UseEffect/IntervalHookCounter';
+import FetchDataOne from './hooks/UseEffect/FetchDataOne';
+import CounterOne from './hooks/UseReducer/CounterOne';
+import CounterTwo from './hooks/UseReducer/CounterTwo';
+import CounterThree from './hooks/UseReducer/CounterThree';
+import ComponentA from './hooks/UseReducer/UseContext/ComponentA';
+import ComponentB from './hooks/UseReducer/UseContext/ComponentB';
+import ComponentC from './hooks/UseReducer/UseContext/ComponentC';
+import DataFetchingOne from './hooks/UseReducer/FetchData/DataFetchingOne';
+import DataFetchingTwo from './hooks/UseReducer/FetchData/DataFetchingTwo';
+import ParentCallbackComponent from './hooks/UseCallback/ParentCallbackComponent';
+import CounterMemo from './hooks/CounterMemo';
+import RefHook from './hooks/RefHook';
+import DocTitleOne from './hooks/CustomHook/DocTitleOne';
+import DocTitleTwo from './hooks/CustomHook/DocTitleTwo';
+import CustomHookCounterOne from './hooks/CustomHook/CustomHookCounterOne';
+import CustomHookCounterTwo from './hooks/CustomHook/CustomHookCounterTwo';
+import UserForm from './components/UserForm';
+import ContextComponentA from './hooks/UseContext/ContextComponentA';
+
+
+const initialState = 0;
+const reducer = (state, action) => {
+  switch (action) {
+    case 'increment':
+      return state + 1
+    case 'decrement':
+      return state - 1
+    case 'reset':
+      return initialState
+    default:
+      return state
+  }
+}
+
+const [count, dispatch] = useReducer(reducer, initialState)
+
+  <div>
+          {/*
+            <h1>Hello World!</h1>
+            <h3>Statefull class component.</h3>
+            <Greet name="Vikas"></Greet>
+            <Welcome name="Krisha"></Welcome>
+            <Message></Message>
+            <Timer></Timer>
+            <Counter></Counter>
+            <FunctionClick></FunctionClick>
+            <ClassClick></ClassClick>
+            <ParentComponent></ParentComponent>
+            <h3>Conditional Component</h3>
+            <UserGreeting></UserGreeting>
+            <NameList></NameList>            
+            <Form></Form>            
+            <LifeCycleA></LifeCycleA>            
+            <FragmentDemo></FragmentDemo>
+            <Table></Table>             
+             <ParentComp></ParentComp>             
+             <RefsDemo></RefsDemo>             
+             <FocusInput></FocusInput>            
+            <FRParentInput></FRParentInput>            
+             <PortalDemo></PortalDemo>             
+          <ErrorBoundary>
+            <Hero heroName="Batman"></Hero>
+          </ErrorBoundary>
+          <ErrorBoundary>
+            <Hero heroName="Superman"></Hero>
+          </ErrorBoundary>
+          <ErrorBoundary>
+            <Hero heroName="Joker"></Hero>
+          </ErrorBoundary>          
+          <ClickCounter></ClickCounter>
+          <HoverCounter></HoverCounter>          
+          <ClickCounterTwo></ClickCounterTwo>
+          <HoverCounterTwo></HoverCounterTwo>
+          <RenderPropsUser render={(isLoggedIn) => isLoggedIn ? 'Vikas Salvi': 'Guest'}></RenderPropsUser>          
+          <RenderPropsCounter>
+            {
+              (count, incrementCount) => (
+                <ClickCounterTwo count={count} incrementCount={incrementCount}></ClickCounterTwo>
+              )
+            }
+          </RenderPropsCounter>
+          <RenderPropsCounter>
+            {
+              (count, incrementCount) => (
+                <HoverCounterTwo count={count} incrementCount={incrementCount}></HoverCounterTwo>
+              )
+            }
+          </RenderPropsCounter>
+          
+          <UserProvider value="Vikas">
+            <ComponentC></ComponentC>
+          </UserProvider>           
+          <HookCounter></HookCounter>          
+          <HookCounterThree></HookCounterThree>                  
+          <ClassCounterOne></ClassCounterOne>          
+          <HookMouse></HookMouse>          
+          <MouseContainer></MouseContainer>
+          <IntervalClassCounter></IntervalClassCounter>
+          <IntervalHookCounter></IntervalHookCounter>          
+          <UserContext.Provider value={'Vikas Kishor Salvi'}>
+            <ComponentC></ComponentC>
+          </UserContext.Provider>          
+          <CounterOne></CounterOne>          
+          <CounterTwo></CounterTwo>          
+          <CounterThree></CounterThree>          
+          <CountContext.Provider value={{countState: count, countDispatch: dispatch}}>
+            Count - {count}
+            <ComponentA></ComponentA>
+            <ComponentB></ComponentB>
+            <ComponentC></ComponentC>
+          </CountContext.Provider>          
+          <DataFetchingTwo></DataFetchingTwo>          
+          <ParentCallbackComponent></ParentCallbackComponent>          
+          <CounterMemo></CounterMemo>
+          <RefHook></RefHook>          
+          <DocTitleOne></DocTitleOne>
+          <DocTitleTwo></DocTitleTwo>         
+          <CustomHookCounterOne></CustomHookCounterOne>
+          <CustomHookCounterTwo></CustomHookCounterTwo>           
+          <UserForm></UserForm>
+          */}
+        </div>
+
+
+        <ul className="nav">
+                        <li className="nav-item">
+                            <NavLink to="/quiz" className="nav-link">Quiz</NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink to="/form" className="nav-link">Form</NavLink>
+                        </li>
+                    </ul>

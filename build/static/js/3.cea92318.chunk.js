@@ -1,0 +1,2 @@
+(this["webpackJsonpReact-Quiz-Game"]=this["webpackJsonpReact-Quiz-Game"]||[]).push([[3],{280:function(e,n,t){"use strict";t.r(n);var o=t(0),c=t.n(o);n.default=function(e){return console.log("Rendering Users"),Object(o.useEffect)((function(){console.log("Users list"),fetch("https://jsonplaceholder.typicode.com/todos/1").then((function(e){return e.json()})).then((function(e){return console.log(e)}))}),[]),c.a.createElement("div",null,c.a.createElement("h2",null,"Users component"))}}}]);
+//# sourceMappingURL=3.cea92318.chunk.js.map
